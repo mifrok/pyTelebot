@@ -29,13 +29,13 @@ def start_process():  # Запуск Process
 class P_schedule():  # Class для работы с schedule
     def start_schedule():  # Запуск schedule
         ######Параметры для schedule######
-        schedule.every().day.at("11:02").do(P_schedule.send_message1)
+        schedule.every().day.at("11:00").do(P_schedule.send_message1)
         schedule.every(1).minutes.do(P_schedule.send_message2)
         ##################################
 
         while True:  # Запуск цикла
             schedule.run_pending()
-            time.sleep(1)
+            time.sleep(60)
 
     ####Функции для выполнения заданий по времени
     def send_message1():
